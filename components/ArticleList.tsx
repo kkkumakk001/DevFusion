@@ -1,9 +1,9 @@
 import { Article } from "@/lib/microcms";
-import Image from "next/image";
 import Link from "next/link";
-
+import Date from "./Date";
+import { Button } from "./ui/button";
+// import Image from "next/image";
 // import Category from "../Category";
-// import Date from "../Date";
 
 type Props = {
     article: Article[];
@@ -21,19 +21,22 @@ export default function ArticleList({ article }: Props) {
                         <dt className="text-lg mb-2 hover:underline">
                             <Link href={`/article/${article.id}`}>{article.title}</Link>
                         </dt>
-                        <dd className="flex flex-wrap">
-                            <div className="mb-2">
+                        <dd className="md:flex">
+                            {/* <dd> */}
+                            <Date date={article.publishedAt ?? article.createdAt} />
+                            <div className="mt-2 md:mt-0 md:ml-2">
                                 {article.category.map((category) => (
-                                    <Link
-                                        key={category.name}
-                                        href={`/article/category/${category.name}`}
-                                        className="border px-2 py-1 rounded-xl [&:not(:last-child)]:mr-2"
-                                    >
-                                        {category.name}
-                                    </Link>
+                                    <Button asChild size="sm">
+                                        <Link
+                                            key={category.name}
+                                            href={`/article/category/${category.name}`}
+                                            className="border px-2 py-1 rounded-xl [&:not(:last-child)]:mr-2 hover:bg-blue-200 duration-500"
+                                        >
+                                            {category.name}
+                                        </Link>
+                                    </Button>
                                 ))}
                             </div>
-                            <div className="w-full">{article.publishedAt ?? article.createdAt}</div>
                         </dd>
                     </dl>
                 </li>

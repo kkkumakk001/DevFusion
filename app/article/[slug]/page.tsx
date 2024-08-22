@@ -1,7 +1,18 @@
-export default function Page() {
+import ArticleDetail from "@/components/ArticleDetail";
+import { getArticleDetail } from "@/lib/microcms";
+
+type Props = {
+    params: {
+        slug: string;
+    };
+};
+
+export default async function Page({ params }: Props) {
+    const data = await getArticleDetail(params.slug);
+
     return (
         <main>
-            <h2>記事の詳細ページ</h2>
+            <ArticleDetail data={data} />
         </main>
     );
 }
