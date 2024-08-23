@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Article } from "../lib/microcms";
-// import Category from "../Category";
 import Date from "./Date";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
@@ -21,11 +20,11 @@ export default function ArticleDetail({ data }: Props) {
                         <Date date={data.publishedAt ?? data.createdAt} />
                         <div className="mb-8">
                             {data.category.map((category) => (
-                                <Button asChild size="sm">
+                                <Button asChild size="tag">
                                     <Link
                                         key={category.name}
-                                        href={`/article/category/${category.name}`}
-                                        className="border px-2 py-1 rounded-xl [&:not(:last-child)]:mr-2 hover:bg-blue-200 duration-500"
+                                        href={`/article/category/${category.id}`}
+                                        className="border rounded-xl [&:not(:last-child)]:mr-2 duration-500"
                                     >
                                         {category.name}
                                     </Link>
