@@ -8,14 +8,11 @@ type Props = {
 
 export default function ButtonLink({ href, children }: Props) {
     return (
-        //右寄せ
-        // <div className="flex justify-end">
         <Button asChild size="lg">
             <Link href={href}>
                 {children}
                 <img className="ml-2 size-4" src="/arrow-right.svg"></img>
             </Link>
         </Button>
-        // </div>
     );
 }
