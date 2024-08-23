@@ -1,7 +1,29 @@
-export default function Page() {
+import ArticleList from "@/components/ArticleList";
+import CategoryTitle from "@/components/CategoryTitle";
+import Pagination from "@/components/Pagination";
+import { NEWS_LIST_LIMIT } from "@/constants";
+import { getArticleList, getCategoryDetail } from "@/lib/microcms";
+import { notFound } from "next/navigation";
+
+type Props = {
+    params: {
+        categoryId: string;
+    };
+};
+
+export default async function Page({ params }: Props) {
+    const category = await getCategoryDetail(params.categoryId).catch(notFound);
+
+    const { contents: article, totalCount } = await getArticleList({
+        filters: `category[contains]${category.id}`,
+        limit: NEWS_LIST_LIMIT,
+    });
+
     return (
-        <main>
-            <h2>特定のカテゴリで絞り込んだ記事の一覧</h2>
-        </main>
+        <>
+            <CategoryTitle category={category} />
+            <ArticleList article={article} />
+            <Pagination totalCount={totalCount} basePath={`/article/category/${category.id}`} />
+        </>
     );
 }
