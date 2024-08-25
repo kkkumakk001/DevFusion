@@ -1,4 +1,5 @@
 import ArticleList from "@/components/ArticleList";
+import CategoryTitle from "@/components/CategoryTitle";
 import Pagination from "@/components/Pagination";
 import { NEWS_LIST_LIMIT } from "@/constants";
 import { getArticleList, getCategoryDetail } from "@/lib/microcms";
@@ -30,10 +31,7 @@ export default async function Page({ params }: Props) {
 
     return (
         <main>
-            <h2>
-                {category.name}で絞り込んだ記事の一覧を3づつ分けた{current}ページ目
-            </h2>
-            <p>{params.categoryId}</p>
+            <CategoryTitle category={category} />
             <ArticleList article={article} />
             <Pagination
                 totalCount={totalCount}
