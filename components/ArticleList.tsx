@@ -24,11 +24,11 @@ export default function ArticleList({ article }: Props) {
                             <Date date={article.publishedAt ?? article.createdAt} />
                             <div className="mt-2 md:mt-0 md:ml-2">
                                 {article.category.map((category) => (
-                                    <Button asChild size="tag">
+                                    <Button key={category.name} asChild size="tag">
                                         <Link
                                             key={category.name}
                                             href={`/article/category/${category.id}`}
-                                            className="border px-2 py-1 rounded-xl [&:not(:last-child)]:mr-2 hover:bg-blue-200 duration-500"
+                                            className="border px-2 py-1 rounded-xl [&:not(:last-child)]:mr-2 duration-500"
                                         >
                                             {category.name}
                                         </Link>

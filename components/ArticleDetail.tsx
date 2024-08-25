@@ -13,16 +13,16 @@ type Props = {
 export default function ArticleDetail({ data }: Props) {
     return (
         <article className="flex justify-center mb-20">
-            <Card className="max-w-[900px]">
+            <Card className="w-full mx-auto max-w-[900px]">
                 <CardHeader className="mb-16">
                     <CardTitle className="mb-4 text-3xl">{data.title}</CardTitle>
                     <div className="grid gap-2">
                         <Date date={data.publishedAt ?? data.createdAt} />
                         <div className="mb-8">
                             {data.category.map((category) => (
-                                <Button asChild size="tag">
+                                <Button asChild size="tag" key={category.name}>
                                     <Link
-                                        key={category.name}
+                                        // key={category.name}
                                         href={`/article/category/${category.id}`}
                                         className="border rounded-xl [&:not(:last-child)]:mr-2 duration-500"
                                     >
