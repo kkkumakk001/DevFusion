@@ -39,6 +39,11 @@ export const getArticleDetail = async (contentId: string, queries?: MicroCMSQuer
         endpoint: "article",
         contentId,
         queries,
+        customRequestInit: {
+            next: {
+                revalidate: queries?.draftKey === undefined ? 60 : 0,
+            },
+        },
     });
 
     return detailData;
