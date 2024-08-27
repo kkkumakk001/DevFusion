@@ -1,0 +1,17 @@
+export const tags = [
+    { id: "nextjs", name: "Next.js" },
+    { id: "react", name: "React" },
+    { id: "tailwindcss", name: "TailwindCSS" },
+    { id: "typescript", name: "TypeScript" },
+    { id: "supabase", name: "Supabase" },
+    { id: "vercel", name: "Vercel" },
+    { id: "prittier", name: "Prittier" },
+    { id: "framer-motion", name: "Framer-motion" },
+    { id: "shadcnui", name: "shadcn/ui" },
+    { id: "html", name: "HTML" },
+    { id: "css", name: "CSS" },
+    { id: "sql", name: "SQL" },
+    { id: "microcms", name: "microCMS" },
+    { id: "git", name: "Git" },
+    { id: "error", name: "Error" },
+];
