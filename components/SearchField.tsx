@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
@@ -20,14 +20,14 @@ function SearchFieldComponent() {
 
     return (
         <form onSubmit={handleSubmit} className="mb-6">
-            <label className="flex items-center gap-3 px-4 py-3 border w-full max-w-full rounded-sm focus-within:border-[var(--border)]">
-                <Image src="/search.svg" alt="検索" width={16} height={16} loading="eager" />
+            <label className="flex items-center gap-3 px-4 py-3 border border-primary/30 focus-within:border-primary/70 w-full max-w-full rounded-sm">
+                <MagnifyingGlassIcon width={24} height={24} />
                 <input
                     type="text"
                     name="q"
                     defaultValue={searchParams.get("q") ?? undefined}
                     placeholder="キーワードを入力"
-                    className="block p-0 w-full appearance-none outline-none bg-transparent border-transparent"
+                    className="block p-0 w-full appearance-none outline-none bg-transparent border-transparent placeholder:text-primary"
                 />
             </label>
         </form>
