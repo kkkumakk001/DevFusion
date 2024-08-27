@@ -14,7 +14,10 @@ export default function ArticleList({ article }: Props) {
     return (
         <ul>
             {article.map((article) => (
-                <li key={article.id} className="w-full [&:not(:last-child)]:border-b p-6">
+                <li
+                    key={article.id}
+                    className="w-full [&:not(:last-child)]:border-b border-primary/30 p-6"
+                >
                     <dl>
                         <dt className="text-lg mb-2 hover:underline">
                             <Link href={`/article/${article.id}`}>{article.title}</Link>

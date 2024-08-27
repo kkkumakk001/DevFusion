@@ -1,7 +1,10 @@
-import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import type { Metadata } from "next";
+import { Noto_Sans_JP } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
+
+const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -11,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="ja">
-            <body>
+            <body className={notoSansJP.className}>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="dark"
@@ -19,8 +22,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     disableTransitionOnChange
                 >
                     <Header />
-                    <main>{children}</main>
-                    <aside></aside>
+                    <main className="w-[95%] mx-auto">{children}</main>
+                    <footer>footer</footer>
                 </ThemeProvider>
             </body>
         </html>

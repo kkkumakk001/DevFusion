@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet";
 import Link from "next/link";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
+import { Button } from "./ui/button";
 
 const navLink = [
     { name: "Home", href: "" },
@@ -19,7 +20,9 @@ export default function NavSheet({ className }: { className?: string }) {
         <div className={cn(className, "flex items-center justify-center")}>
             <Sheet open={open} onOpenChange={setOpen}>
                 <SheetTrigger className="md:hidden">
-                    <HamburgerMenuIcon></HamburgerMenuIcon>
+                    <Button variant="noDesign" size="icon">
+                        <HamburgerMenuIcon className="h-[1.2rem] w-[1.2rem]"></HamburgerMenuIcon>
+                    </Button>
                 </SheetTrigger>
                 <SheetContent
                     side={"top"}

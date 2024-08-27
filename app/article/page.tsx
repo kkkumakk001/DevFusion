@@ -9,10 +9,10 @@ export default async function Articles() {
         limit: NEWS_LIST_LIMIT,
     });
     return (
-        <main className="w-[90%] pt-12 mx-auto">
+        <section>
             <SearchField />
             <ArticleList article={article} />
             <Pagination totalCount={totalCount} />
-        </main>
+        </section>
     );
 }

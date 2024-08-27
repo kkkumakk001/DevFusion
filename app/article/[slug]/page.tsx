@@ -17,8 +17,8 @@ export default async function Page({ params, searchParams }: Props) {
     }).catch(notFound);
 
     return (
-        <main>
+        <>
             <ArticleDetail data={data} />
-        </main>
+        </>
     );
 }

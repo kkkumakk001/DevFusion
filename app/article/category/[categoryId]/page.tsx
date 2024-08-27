@@ -22,6 +22,7 @@ export default async function Page({ params }: Props) {
     return (
         <>
             <CategoryTitle category={category} />
+            <span className="block mb-8"></span>
             <ArticleList article={article} />
             <Pagination totalCount={totalCount} basePath={`/article/category/${category.id}`} />
         </>
