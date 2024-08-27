@@ -20,7 +20,7 @@ export default function NavSheet({ className }: { className?: string }) {
         <div className={cn(className, "flex items-center justify-center")}>
             <Sheet open={open} onOpenChange={setOpen}>
                 <SheetTrigger className="md:hidden">
-                    <Button variant="noDesign" size="icon">
+                    <Button asChild variant="noDesign" size="icon">
                         <HamburgerMenuIcon className="h-[1.2rem] w-[1.2rem]"></HamburgerMenuIcon>
                     </Button>
                 </SheetTrigger>
