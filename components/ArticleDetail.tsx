@@ -20,7 +20,7 @@ export default function ArticleDetail({ data }: Props) {
                         <Button asChild size="tag" key={category.name}>
                             <Link
                                 href={`/article/category/${category.id}`}
-                                className="border rounded-xl [&:not(:last-child)]:mr-2 duration-500"
+                                className="[&:not(:last-child)]:mr-2 duration-500"
                             >
                                 {category.name}
                             </Link>

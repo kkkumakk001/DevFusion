@@ -26,7 +26,6 @@ export default async function Page({ params }: Props) {
 
     return (
         <main>
-            <h2>全記事を10個ごとに分けた何ページ目か</h2>
             <ArticleList article={article} />
             <Pagination totalCount={totalCount} current={current} />
         </main>

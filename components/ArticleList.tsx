@@ -16,7 +16,7 @@ export default function ArticleList({ article }: Props) {
             {article.map((article) => (
                 <li
                     key={article.id}
-                    className="w-full [&:not(:last-child)]:border-b border-primary/30 p-6"
+                    className="w-full border-b border-dashed border-primary/30 p-6"
                 >
                     <dl>
                         <dt className="text-lg mb-2 hover:underline">
@@ -31,7 +31,7 @@ export default function ArticleList({ article }: Props) {
                                         <Link
                                             key={category.name}
                                             href={`/article/category/${category.id}`}
-                                            className="border px-2 py-1 rounded-xl [&:not(:last-child)]:mr-2 duration-500"
+                                            className="[&:not(:last-child)]:mr-2 duration-500"
                                         >
                                             {category.name}
                                         </Link>

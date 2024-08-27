@@ -6,15 +6,17 @@ type Props = {
 };
 export default function CategoryTitle({ category }: Props) {
     return (
-        <p className="pl-6">
-            <Link
-                key={category.name}
-                href={`/article/category/${category.id}`}
-                className="duration-500"
-            >
-                "{category.name}"
-            </Link>
-            <span className="">の検索結果</span>
+        <p className="pl-6 pb-2 border-b border-primary/30 max-w-fit">
+            <span className="-ml-6">
+                <Link
+                    key={category.name}
+                    href={`/article/category/${category.id}`}
+                    className="duration-500"
+                >
+                    "{category.name}"
+                </Link>
+                <span className="">の検索結果</span>
+            </span>
         </p>
     );
 }
