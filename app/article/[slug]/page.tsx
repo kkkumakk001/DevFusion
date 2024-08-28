@@ -1,6 +1,8 @@
 import ArticleDetail from "@/components/ArticleDetail";
 import { getArticleDetail } from "@/lib/microcms";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
+import ArticleDetailLoading from "./loading";
 
 type Props = {
     params: {
@@ -18,7 +20,9 @@ export default async function Page({ params, searchParams }: Props) {
 
     return (
         <>
-            <ArticleDetail data={data} />
+            <Suspense fallback={<ArticleDetailLoading />}>
+                <ArticleDetail data={data} />
+            </Suspense>
         </>
     );
 }

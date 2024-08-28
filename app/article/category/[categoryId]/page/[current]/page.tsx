@@ -1,9 +1,11 @@
+import ArticleListLoading from "@/app/article/loading";
 import ArticleList from "@/components/ArticleList";
 import CategoryTitle from "@/components/CategoryTitle";
 import Pagination from "@/components/Pagination";
 import { NEWS_LIST_LIMIT } from "@/constants";
 import { getArticleList, getCategoryDetail } from "@/lib/microcms";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 type Props = {
     params: {
@@ -32,7 +34,9 @@ export default async function Page({ params }: Props) {
     return (
         <main>
             <CategoryTitle category={category} />
-            <ArticleList article={article} />
+            <Suspense fallback={<ArticleListLoading />}>
+                <ArticleList article={article} />
+            </Suspense>
             <Pagination
                 totalCount={totalCount}
                 current={current}

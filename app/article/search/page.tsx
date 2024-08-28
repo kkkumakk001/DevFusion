@@ -1,6 +1,8 @@
 import ArticleList from "@/components/ArticleList";
 import SearchField from "@/components/SearchField";
 import { getArticleList } from "@/lib/microcms";
+import { Suspense } from "react";
+import ArticleListLoading from "../loading";
 
 type Props = {
     searchParams: {
@@ -16,7 +18,9 @@ export default async function Page({ searchParams }: Props) {
     return (
         <main>
             <SearchField />
-            <ArticleList article={article} />
+            <Suspense fallback={<ArticleListLoading />}>
+                <ArticleList article={article} />
+            </Suspense>
         </main>
     );
 }
