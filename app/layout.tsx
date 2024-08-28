@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     disableTransitionOnChange
                 >
                     <Header />
+                    <Breadcrumbs />
                     <main className="w-[95%] mx-auto">{children}</main>
                     <footer>footer</footer>
                 </ThemeProvider>
