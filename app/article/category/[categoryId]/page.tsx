@@ -4,6 +4,7 @@ import Pagination from "@/components/Pagination";
 import { NEWS_LIST_LIMIT } from "@/constants";
 import { getArticleList, getCategoryDetail } from "@/lib/microcms";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 type Props = {
     params: {
