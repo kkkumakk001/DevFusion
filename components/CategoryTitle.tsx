@@ -13,7 +13,7 @@ export default function CategoryTitle({ category }: Props) {
                     href={`/article/category/${category.id}`}
                     className="duration-500"
                 >
-                    "{category.name}"
+                    &quot;{category.name}&#34;
                 </Link>
                 <span className="">の検索結果</span>
             </span>
