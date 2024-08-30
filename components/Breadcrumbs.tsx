@@ -2,11 +2,9 @@
 
 import {
     Breadcrumb,
-    BreadcrumbEllipsis,
     BreadcrumbItem,
     BreadcrumbLink,
     BreadcrumbList,
-    BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
@@ -23,8 +21,6 @@ const Breadcrumbs = () => {
                         const createLink = segments.slice(0, index + 1);
                         const link = createLink.join("/");
                         const notLink = link.endsWith("page");
-                        console.log(link);
-                        console.log(notLink);
                         return (
                             <span key={index} className="flex gap-2 items-center group">
                                 <BreadcrumbLink asChild>
