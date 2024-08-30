@@ -24,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 >
                     <Header />
                     <Breadcrumbs />
+                    <span className="block mb-4"></span>
                     <main className="w-[95%] mx-auto">{children}</main>
                     <footer>footer</footer>
                 </ThemeProvider>

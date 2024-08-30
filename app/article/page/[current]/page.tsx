@@ -28,6 +28,7 @@ export default async function Page({ params }: Props) {
 
     return (
         <main>
+            <p className="pb-2 mb-4 border-b border-primary/30 max-w-fit">記事一覧</p>
             <Suspense fallback={<ArticleListLoading />}>
                 <ArticleList article={article} />
             </Suspense>
