@@ -1,17 +1,29 @@
-import BackButton from "./button";
+import { notFound } from "next/navigation";
+import { componentRecipe } from "@/datas/componentRecipe";
+import ButtonLink from "@/components/ButtonLink";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-    let slugs = ["1", "2", "3", "4", "5", "6"];
-    return slugs.map((slug) => ({ name: slug }));
+    return componentRecipe.map((component) => ({ name: component.linkName }));
 }
 
-export default function PhotoPage({ params: { name } }: { params: { name: string } }) {
+export default function Page({ params: { name } }: { params: { name: string } }) {
+    const component = componentRecipe.find((comp) => comp.linkName === name);
+    if (component === undefined) {
+        notFound();
+    }
     return (
-        <div className="bg-blue-500 h-32 flex justify-center items-center">
-            {name}
-            <BackButton />
+        <div className="flex justify-center items-center">
+            <div className="w-full">
+                <p className="mb-4 font-semibold text-lg">{component.title}</p>
+                <div className="min-h-[300px] h-auto p-4 mb-4 border border-border rounded-xl flex justify-center items-center">
+                    <span>{component.componentName}</span>
+                </div>
+                <span className="flex justify-end">
+                    <ButtonLink href="/component">コンポーネント一覧へ</ButtonLink>
+                </span>
+            </div>
         </div>
     );
 }

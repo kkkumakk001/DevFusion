@@ -1,11 +1,10 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import React from "react";
-
+import Link from "next/link";
 const BackButton = () => {
-    const router = useRouter();
-    return <button onClick={router.back}>一覧に戻る</button>;
+    return (
+        <Link href="/component" className="border border-border rounded-sm">
+            一覧に戻る
+        </Link>
+    );
 };
 
 export default BackButton;
