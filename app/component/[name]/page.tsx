@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { componentRecipe } from "@/datas/componentRecipe";
 import ButtonLink from "@/components/ButtonLink";
+import styles from "./page.module.scss";
 
 export const dynamicParams = false;
 
@@ -20,6 +21,7 @@ export default function Page({ params: { name } }: { params: { name: string } })
                 <div className="min-h-[300px] h-auto p-4 mb-6 border border-border rounded-xl flex justify-center items-center">
                     <span>{component.componentName}</span>
                 </div>
+                <div className={styles.highlight}>{component.content}</div>
                 <span className="flex justify-end">
                     <ButtonLink href="/component">コンポーネント一覧へ</ButtonLink>
                 </span>

@@ -4,12 +4,13 @@ import type { Article } from "../lib/microcms";
 import Date from "./Date";
 import { Button } from "./ui/button";
 import ButtonLink from "./ButtonLink";
+import styles from "./ArticleDetail.module.scss";
 
 type Props = {
     data: Article;
 };
 
-export default function ArticleDetail({ data }: Props) {
+export default async function ArticleDetail({ data }: Props) {
     return (
         <article>
             <h3 className="text-2xl">{data.title}</h3>
@@ -39,12 +40,14 @@ export default function ArticleDetail({ data }: Props) {
                     height={data.thumbnail.height}
                 />
             )}
-            <div
-                className="mb-8 pb-8 border-b border-primary/30"
-                dangerouslySetInnerHTML={{
-                    __html: data.content,
-                }}
-            />
+            <div className={styles.highlight}>
+                <div
+                    className="mb-8 pb-8 border-b border-primary/30"
+                    dangerouslySetInnerHTML={{
+                        __html: data.content,
+                    }}
+                />
+            </div>
             <div className="flex justify-end">
                 <ButtonLink href="/article">記事一覧へ</ButtonLink>
             </div>
