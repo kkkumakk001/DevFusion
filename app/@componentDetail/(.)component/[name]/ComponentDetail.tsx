@@ -20,22 +20,20 @@ export default function ComponentDetail({
     };
 
     return (
-        <div>
+        <>
             {isOpen && (
-                <div>
-                    <Sheet open={isOpen} onOpenChange={outsideClick}>
-                        <SheetDescription>
-                            <VisuallyHidden.Root>説明文です</VisuallyHidden.Root>
-                        </SheetDescription>
-                        <SheetTitle>
-                            <VisuallyHidden.Root>{title}</VisuallyHidden.Root>
-                        </SheetTitle>
-                        <SheetContent side="right" className="w-full pt-16">
-                            {children}
-                        </SheetContent>
-                    </Sheet>
-                </div>
+                <Sheet open={isOpen} onOpenChange={outsideClick}>
+                    <SheetDescription>
+                        <VisuallyHidden.Root>説明文です</VisuallyHidden.Root>
+                    </SheetDescription>
+                    <SheetTitle>
+                        <VisuallyHidden.Root>{title}</VisuallyHidden.Root>
+                    </SheetTitle>
+                    <SheetContent side="right" className="w-full pt-16">
+                        {children}
+                    </SheetContent>
+                </Sheet>
             )}
-        </div>
+        </>
     );
 }
