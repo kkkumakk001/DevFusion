@@ -5,7 +5,6 @@ import Date from "./Date";
 import { Button } from "./ui/button";
 import ButtonLink from "./ButtonLink";
 import styles from "./ArticleDetail.module.scss";
-import parse from "html-react-parser";
 
 type Props = {
     data: Article;
@@ -41,7 +40,6 @@ export default async function ArticleDetail({ data }: Props) {
                     height={data.thumbnail.height}
                 />
             )}
-            {/* <div className={styles.highlight}>{parse(data.content)}</div> */}
             <div className={styles.highlight}>
                 <div
                     className="mb-8 pb-8 border-b border-primary/30 w-full"
@@ -50,7 +48,6 @@ export default async function ArticleDetail({ data }: Props) {
                     }}
                 />
             </div>
-            <div>{data.content}</div>
             <div className="flex justify-end">
                 <ButtonLink href="/article">記事一覧へ</ButtonLink>
             </div>
