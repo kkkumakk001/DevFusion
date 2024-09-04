@@ -10,7 +10,10 @@ export const componentRecipe = [
         content: (
             <div>
                 <pre>
-                    <code>npm install shadcn@......</code>
+                    <code>
+                        npm install shadcn@...... npm install shadcn@...... npm install
+                        shadcn@...... npm install shadcn@......
+                    </code>
                 </pre>
                 <p>インストールしたら</p>
                 <pre>
