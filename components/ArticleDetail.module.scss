@@ -7,11 +7,9 @@
         background-color: #1a2638;
         margin-bottom: 32px;
         white-space: pre-wrap;
-        // word-break: break-all;
-        // word-wrap: break-word;
+        word-break: break-all;
         code {
             color: #dfe2e5;
-            // overflow-wrap: anywhere;
         }
     }
     p {
