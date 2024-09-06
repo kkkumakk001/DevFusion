@@ -20,8 +20,9 @@ export default function Page({ params: { name } }: { params: { name: string } })
                 <div className="flex justify-center items-center">
                     <div className="w-full">
                         <p className="mb-4 font-semibold text-lg">{component.title}</p>
-                        <div className="min-h-[300px] h-auto mb-8 p-4 border border-border rounded-xl flex justify-center items-center">
-                            <span>{component.componentName}</span>
+                        <div className="relative overflow-hidden min-h-[300px] h-auto mb-8 border border-border rounded-xl flex justify-center items-center">
+                            <div className="absolute inset-0 h-full w-full bg-custom-pattern"></div>
+                            <div className="p-10">{component.componentName}</div>
                         </div>
                         <div className={styles.highlight}>{component.content}</div>
                     </div>
