@@ -1,49 +1,81 @@
-import Header from "@/components/Header";
-import { ModeToggleButton } from "@/components/ModeToggleButton";
-import SideNav from "@/components/SideNav";
+import Breadcrumbs, { BreadcrumbsCode } from "@/app/_resipes/BreadCrumbs";
+import ButtonWithIcon, { ButtonWithIconCode } from "@/app/_resipes/ButtonWithIcon";
+import FrostedGlass, { FrostedGlassCode } from "@/app/_resipes/FrostedGlass";
+import MarqueeComp, { MarqueeCompCode } from "@/app/_resipes/Marquee";
+import { ModeToggleButton, ModeToggleButtonCode } from "@/app/_resipes/ModeToggleButton";
+import SearchField, { SearchFieldCode } from "@/app/_resipes/SearchField";
 
 export const componentRecipe = [
     {
-        title: "ヘッダー",
-        linkName: "header",
-        componentName: <Header />,
+        title: "ダークモードーライトモード切り替え",
+        linkName: "modetogglebutton",
+        componentName: <ModeToggleButton />,
         content: (
             <div>
                 <pre>
-                    <code>
-                        npm install shadcn@...... npm install shadcn@...... npm install
-                        shadcn@...... npm install shadcn@......
-                    </code>
+                    <code>{ModeToggleButtonCode}</code>
                 </pre>
-                <p>インストールしたら</p>
-                <pre>
-                    <code>git push ogirin main</code>
-                </pre>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam explicabo,
-                    voluptatem aperiam sit cupiditate in ipsam dicta adipisci voluptatum non
-                    facilis, a quod repudiandae voluptas veritatis numquam. Necessitatibus, sit
-                    consequatur.
-                </p>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam explicabo,
-                    voluptatem aperiam sit cupiditate in ipsam dicta adipisci voluptatum non
-                    facilis, a quod repudiandae voluptas veritatis numquam. Necessitatibus, sit
-                    consequatur.
-                </p>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam explicabo,
-                    voluptatem aperiam sit cupiditate in ipsam dicta adipisci voluptatum non
-                    facilis, a quod repudiandae voluptas veritatis numquam. Necessitatibus, sit
-                    consequatur.
-                </p>
             </div>
         ),
     },
-    { title: "サイドナビゲーション", linkName: "sidenav", componentName: <SideNav /> },
     {
-        title: "ダークモドーライトモード切り替え",
-        linkName: "modetogglebutton",
-        componentName: <ModeToggleButton />,
+        title: "アイコン付きボタン",
+        linkName: "buttonwithicon",
+        componentName: <ButtonWithIcon href="/">ボタン</ButtonWithIcon>,
+        content: (
+            <div>
+                <pre>
+                    <code>{ButtonWithIconCode}</code>
+                </pre>
+            </div>
+        ),
+    },
+    {
+        title: "検索フィールド",
+        linkName: "searchfield",
+        componentName: <SearchField />,
+        content: (
+            <div>
+                <pre>
+                    <code>{SearchFieldCode}</code>
+                </pre>
+            </div>
+        ),
+    },
+    {
+        title: "すりガラス",
+        linkName: "frostedglass",
+        componentName: <FrostedGlass />,
+        content: (
+            <div>
+                <pre>
+                    <code>{FrostedGlassCode}</code>
+                </pre>
+            </div>
+        ),
+    },
+    {
+        title: "パンくずリスト",
+        linkName: "breadcrumbs",
+        componentName: <Breadcrumbs />,
+        content: (
+            <div>
+                <pre>
+                    <code>{BreadcrumbsCode}</code>
+                </pre>
+            </div>
+        ),
+    },
+    {
+        title: "マーキー",
+        linkName: "marquee",
+        componentName: <MarqueeComp />,
+        content: (
+            <div>
+                <pre>
+                    <code>{MarqueeCompCode}</code>
+                </pre>
+            </div>
+        ),
     },
 ];

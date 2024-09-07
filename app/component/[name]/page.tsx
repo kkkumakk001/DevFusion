@@ -18,7 +18,7 @@ export default function Page({ params: { name } }: { params: { name: string } })
         <div className="flex justify-center items-center max-w-3xl mx-auto">
             <div className="w-full">
                 <p className="mt-8 mb-4 font-semibold text-lg">{component.title}</p>
-                <div className="min-h-[300px] h-auto p-4 mb-6 border border-border rounded-xl flex justify-center items-center">
+                <div className="min-h-[300px] h-auto p-4 mb-6 border border-border rounded-xl flex justify-center items-center overflow-hidden">
                     <span>{component.componentName}</span>
                 </div>
                 <div className={styles.highlight}>{component.content}</div>
