@@ -1,7 +1,9 @@
-export default function Page() {
+import BookmarkArticle from "@/components/BookMarkArticle";
+
+export default async function Page() {
     return (
-        <main>
-            <h2>ダッシュボードページ</h2>
-        </main>
+        <div className="flex-1 w-full flex flex-col gap-20 items-center pt-24">
+            <BookmarkArticle></BookmarkArticle>
+        </div>
     );
 }

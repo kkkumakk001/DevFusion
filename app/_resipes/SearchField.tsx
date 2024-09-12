@@ -19,7 +19,7 @@ function SearchFieldComponent() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="mb-6">
+        <form onSubmit={handleSubmit}>
             <label className="flex items-center gap-3 px-4 py-3 border border-primary/30 focus-within:border-primary/70 w-full max-w-full rounded-sm">
                 <MagnifyingGlassIcon width={24} height={24} />
                 <input

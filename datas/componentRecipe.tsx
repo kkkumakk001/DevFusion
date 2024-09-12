@@ -7,7 +7,7 @@ import SearchField, { SearchFieldCode } from "@/app/_resipes/SearchField";
 
 export const componentRecipe = [
     {
-        title: "ダークモードーライトモード切り替え",
+        title: "ダークモード切り替え",
         linkName: "modetogglebutton",
         componentName: <ModeToggleButton />,
         content: (

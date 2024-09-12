@@ -63,7 +63,7 @@ const icons = [
 
 export default function MarqueeComp() {
     return (
-        <div className="my-24 lg:my-16 mx-auto max-w-[800px] overflow-hidden">
+        <div className="my-24 lg:my-16 mx-auto max-w-[500px] overflow-hidden">
             <span className="sr-only">セクションタイトル</span>
             <Marquee
                 speed={30}
