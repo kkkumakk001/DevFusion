@@ -86,7 +86,3 @@ body {
     word-break: normal;
     line-break: strict;
 }
-
-p > a:hover {
-    text-decoration: underline;
-}
