@@ -9,7 +9,7 @@ export default async function RecentArticle() {
         limit: TOP_NEWS_LIMIT,
     });
     return (
-        <section className="border border-border p-12 rounded-xl mb-8">
+        <section className="border border-border p-8 lg:p-12 rounded-xl mb-8">
             <div className="flex justify-between mb-4">
                 <h2 className="font-bold">新着記事</h2>
                 <span>
