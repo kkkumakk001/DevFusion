@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Page() {
     return (
-        <main className="">
+        <main>
             <h2 className="text-2xl font-semibold mb-12">コンポーネント集</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
                 {componentRecipe.map((component, index) => (
@@ -13,7 +13,7 @@ export default function Page() {
                     >
                         <Link
                             href={`/component/${component.linkName}`}
-                            className="mb-2 font-semibold"
+                            className="block mb-2 font-semibold"
                         >
                             {component.title}
                         </Link>

@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 
 const Header = () => {
     return (
-        <header className="sticky top-0 z-100 py-4 border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 ">
+        <header className="sticky top-0 z-50 py-4 border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 ">
             <div className="mx-auto flex w-[95%] items-center justify-between">
                 <h1>
                     <Link href="/" className="text-xl font-bold">
