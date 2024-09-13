@@ -76,12 +76,17 @@
     }
 }
 
-/* aタグの折り返し */
-a {
-    word-wrap: break-word;
-}
-
 * {
     box-sizing: border-box;
-    word-wrap: break-word;
+    word-wrap: break-all;
+}
+
+body {
+    overflow-wrap: anywhere;
+    word-break: normal;
+    line-break: strict;
+}
+
+p > a:hover {
+    text-decoration: underline;
 }
