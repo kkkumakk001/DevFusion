@@ -21,12 +21,14 @@ export default function RecommendRecipe() {
                         key={index}
                         className="grid grid-rows-subgrid row-span-1 md:row-span-2 xl:row-span-3"
                     >
-                        <Link
-                            href={`/component/${component.linkName}`}
-                            className="block mb-2 font-semibold"
-                        >
-                            {component.title}
-                        </Link>
+                        <p>
+                            <Link
+                                href={`/component/${component.linkName}`}
+                                className="mb-2 font-semibold"
+                            >
+                                {component.title}
+                            </Link>
+                        </p>
                         <div className="relative overflow-hidden h-[200px] md:h-[300px] border border-border rounded-xl flex justify-center items-center">
                             <div className="absolute inset-0 h-full w-full bg-custom-pattern"></div>
                             <div className="p-4">{component.componentName}</div>
