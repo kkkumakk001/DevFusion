@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="ja" suppressHydrationWarning={true}>
-            <body className={notoSansJP.className}>
+            <body className={`notoSansJP.className -z-10`}>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="dark"

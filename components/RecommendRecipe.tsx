@@ -3,9 +3,10 @@ import Link from "next/link";
 
 export default function RecommendRecipe() {
     return (
-        <section className="border border-border p-8 lg:p-12 rounded-xl">
+        // <section className="border border-border p-8 lg:p-12 rounded-xl shadow-lg dark:shadow-[2px_4px_8px_0_rgba(255,255,255,0.1)]">
+        <section className="bg-background p-8 lg:p-12 rounded-xl shadow-[0px_0px_15px_-3px_rgba(0,0,0,0.1)] dark:shadow-[0_0_12px_6px_rgba(255,255,255,0.05)]">
             <div className="flex justify-between mb-8">
-                <h2>レシピ集</h2>
+                <h2 className="font-semibold">レシピ集</h2>
                 <span>
                     <Link
                         href="/component"
@@ -19,10 +20,7 @@ export default function RecommendRecipe() {
                 {componentRecipe.map((component, index) => (
                     <div key={index}>
                         <p className="mb-2">
-                            <Link
-                                href={`/component/${component.linkName}`}
-                                className="font-semibold"
-                            >
+                            <Link href={`/component/${component.linkName}`} className="font-light">
                                 {component.title}
                             </Link>
                         </p>
