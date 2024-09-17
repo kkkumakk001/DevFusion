@@ -4,6 +4,7 @@ import { Noto_Sans_JP } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import PageTopScroll from "@/components/PageTopScroll";
 
 const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="ja" suppressHydrationWarning={true}>
+            <PageTopScroll />
             <body className={`notoSansJP.className -z-10`}>
                 <ThemeProvider
                     attribute="class"
@@ -31,7 +33,7 @@ export default function RootLayout({
                     <Header />
                     <Breadcrumbs />
                     <span className="block mb-4"></span>
-                    <main className="w-[95%] mx-auto">
+                    <main className="w-full md:w-[95%] mx-auto">
                         {children}
                         {componentDetail}
                     </main>
