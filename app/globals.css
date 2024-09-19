@@ -61,8 +61,8 @@
 
 @layer utilities {
     .bg-custom-pattern {
-        background-image: linear-gradient(0deg, transparent 49px, #80808015 50px),
-            linear-gradient(90deg, transparent 49px, #80808015 50px);
+        background-image: linear-gradient(0deg, transparent 49px, #80808025 50px),
+            linear-gradient(90deg, transparent 49px, #80808025 50px);
         background-size: 50px 50px;
     }
 }
