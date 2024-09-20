@@ -74,11 +74,22 @@ const config = {
                     from: { width: "100%", left: "0" },
                     to: { width: "0", left: "100%" },
                 },
+                "text-pop-up-top": {
+                    from: {
+                        transform: "translateY(24px)",
+                        opacity: "0",
+                    },
+                    to: {
+                        transform: "translateY(0)",
+                        opacity: "1",
+                    },
+                },
             },
             animation: {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
                 "slide-to-right": "slide-to-right 1.25s ease-in-out",
+                "text-pop-up-top": "text-pop-up-top 2s ease both",
             },
         },
     },

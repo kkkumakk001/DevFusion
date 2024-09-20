@@ -30,13 +30,15 @@ export default function NavSheet({ className }: { className?: string }) {
                             <Link
                                 key={nav.name}
                                 href={`/${nav.href}`}
-                                className="hover:underline animate-accordion-down relative"
+                                // className="hover:underline animate-accordion-down relative"
+                                className="hover:underline delay-300 animate-text-pop-up-top"
                                 onClick={() => {
                                     setOpen(false);
                                 }}
                             >
-                                <span className="absolute block h-full bg-background animate-slide-to-right delay-100"></span>
-                                <span>{nav.name}</span>
+                                {/* <span className="absolute block h-full bg-background animate-slide-to-right delay-100"></span> */}
+                                {/* <span className="animate-text-pop-up-top">{nav.name}</span> */}
+                                <span className="">{nav.name}</span>
                             </Link>
                         );
                     })}
