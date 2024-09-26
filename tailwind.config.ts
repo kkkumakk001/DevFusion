@@ -18,6 +18,11 @@ const config = {
             },
         },
         extend: {
+            transitionDelay: {
+                "600": "600ms",
+                "900": "900ms",
+                "1200": "1200ms",
+            },
             colors: {
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",
@@ -76,7 +81,7 @@ const config = {
                 },
                 "text-pop-up-top": {
                     from: {
-                        transform: "translateY(24px)",
+                        transform: "translateY(16px)",
                         opacity: "0",
                     },
                     to: {
@@ -89,7 +94,7 @@ const config = {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
                 "slide-to-right": "slide-to-right 1.25s ease-in-out",
-                "text-pop-up-top": "text-pop-up-top 2s ease both",
+                "text-pop-up-top": "text-pop-up-top 1.5s ease both",
             },
         },
     },

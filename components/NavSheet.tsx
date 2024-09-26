@@ -7,10 +7,10 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 
 const navLink = [
-    { name: "Home", href: "" },
-    { name: "Article", href: "article" },
-    { name: "Component", href: "component" },
-    { name: "Contact", href: "contact" },
+    { name: "Home", href: "", delay: "delay-300" },
+    { name: "Article", href: "article", delay: "delay-600" },
+    { name: "Component", href: "component", delay: "delay-900" },
+    { name: "Contact", href: "contact", delay: "delay-1200" },
 ];
 
 export default function NavSheet({ className }: { className?: string }) {
@@ -25,19 +25,16 @@ export default function NavSheet({ className }: { className?: string }) {
                     side={"top"}
                     className="flex h-screen flex-col flex-wrap items-center justify-center"
                 >
-                    {navLink.map((nav, index) => {
+                    {navLink.map((nav) => {
                         return (
                             <Link
                                 key={nav.name}
                                 href={`/${nav.href}`}
-                                // className="hover:underline animate-accordion-down relative"
-                                className="hover:underline delay-300 animate-text-pop-up-top"
+                                className={`hover:underline ${nav.delay} animate-text-pop-up-top`}
                                 onClick={() => {
                                     setOpen(false);
                                 }}
                             >
-                                {/* <span className="absolute block h-full bg-background animate-slide-to-right delay-100"></span> */}
-                                {/* <span className="animate-text-pop-up-top">{nav.name}</span> */}
                                 <span className="">{nav.name}</span>
                             </Link>
                         );
