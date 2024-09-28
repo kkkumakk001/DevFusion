@@ -7,10 +7,10 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 
 const navLink = [
-    { name: "Home", href: "", delay: "delay-300" },
-    { name: "Article", href: "article", delay: "delay-600" },
-    { name: "Component", href: "component", delay: "delay-900" },
-    { name: "Contact", href: "contact", delay: "delay-1200" },
+    { name: "はじめに戻る", ruby: "Home", href: "", delay: "delay-300" },
+    { name: "記事一覧", ruby: "Article", href: "article", delay: "delay-600" },
+    { name: "コンポーネント", ruby: "Component", href: "component", delay: "delay-900" },
+    { name: "お問い合わせ", ruby: "Contact", href: "contact", delay: "delay-1200" },
 ];
 
 export default function NavSheet({ className }: { className?: string }) {
@@ -23,7 +23,7 @@ export default function NavSheet({ className }: { className?: string }) {
                 </SheetTrigger>
                 <SheetContent
                     side={"top"}
-                    className="flex h-screen flex-col flex-wrap items-center justify-center"
+                    className="flex h-screen flex-col flex-wrap items-center justify-center gap-6"
                 >
                     {navLink.map((nav) => {
                         return (
@@ -35,7 +35,22 @@ export default function NavSheet({ className }: { className?: string }) {
                                     setOpen(false);
                                 }}
                             >
-                                <span className="">{nav.name}</span>
+                                <span>
+                                    <ruby>
+                                        {nav.name}
+                                        <rt className="text-xs tracking-wider font-thin">
+                                            {nav.ruby}
+                                        </rt>
+                                    </ruby>
+                                </span>
+                                {/* <span>
+                                    <ruby>
+                                        {nav.name}
+                                        <rt className="text-xs tracking-wider font-thin">
+                                            {nav.ruby}
+                                        </rt>
+                                    </ruby>
+                                </span> */}
                             </Link>
                         );
                     })}
