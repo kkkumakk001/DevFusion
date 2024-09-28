@@ -33,7 +33,7 @@ export default function RootLayout({
                     <Header />
                     <Breadcrumbs />
                     <span className="block mb-4"></span>
-                    <main className="w-full md:w-[95%] mx-auto">
+                    <main className="w-[95%] mx-auto">
                         {children}
                         {componentDetail}
                     </main>
