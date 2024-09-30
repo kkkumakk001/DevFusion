@@ -22,6 +22,10 @@ const config = {
                 "600": "600ms",
                 "900": "900ms",
                 "1200": "1200ms",
+                "10000": "10000ms",
+            },
+            height: {
+                "screen-minus-header": "calc(100vh - 88px)",
             },
             colors: {
                 border: "hsl(var(--border))",
@@ -93,6 +97,14 @@ const config = {
                     "0%, 100%": { opacity: "0" },
                     "50%": { opacity: "1" },
                 },
+                "bounce-3": {
+                    "0%, 100%": { transform: "translateY(0)" },
+                    "50%": { transform: "translateY(-24px)" },
+                },
+                "bounce-infinite": {
+                    "0%, 100%": { transform: "translateY(0)" },
+                    "50%": { transform: "translateY(-16px)" },
+                },
             },
             animation: {
                 "accordion-down": "accordion-down 0.2s ease-out",
@@ -100,6 +112,8 @@ const config = {
                 "slide-to-right": "slide-to-right 1.25s ease-in-out",
                 "text-pop-up-top": "text-pop-up-top 1.5s ease both",
                 "blink-dot": "blink-dot 0.75s step-end infinite",
+                "bounce-3": "bounce-3 1.2s ease-in-out 2",
+                "bounce-infinite": "bounce-infinite 2s ease-in-out infinite",
             },
         },
     },

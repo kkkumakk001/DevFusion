@@ -10,7 +10,7 @@ export default async function RecentArticle() {
         orders: "createdAt",
     });
     return (
-        <section className="bg-background p-8 lg:p-12 rounded-xl mb-12 border">
+        <section id="targetSection" className="bg-background p-8 lg:p-12 rounded-xl mb-12 border">
             <div className="flex justify-between mb-4">
                 <h2 className="font-semibold">新着記事</h2>
                 <span>
