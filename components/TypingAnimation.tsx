@@ -15,22 +15,21 @@ const TypingAnimation = ({ children }: Props) => {
 
         const typing = () => {
             if (index < fullText.length) {
-                setText(fullText.slice(0, index + 1)); // 現在のindexまでの文字列を設定
+                setText(fullText.slice(0, index + 1));
                 index++;
-                const timerId = window.setTimeout(typing, 80); // タイピング速度
+                const timerId = window.setTimeout(typing, 80);
                 return timerId;
             } else {
-                setIsCompleted(true); // 全ての文字が表示されたら完了フラグをセット
+                setIsCompleted(true);
             }
         };
 
         const timerId = typing();
 
-        return () => clearTimeout(timerId); // コンポーネントがアンマウントされたときにタイマーをクリア
+        return () => clearTimeout(timerId);
     }, [fullText]);
 
     return (
-        // <div className="px-4 text-wrap font-mono whitespace-pre-wrap overflow-hidden">
         <div className="px-4 text-wrap font-mono whitespace-pre-wrap overflow-hidden p-8 lg:p-12 rounded-xl">
             <span>{text}</span>
             {!isCompleted && <span className="ml-1 animate-blink-dot scale-150">●</span>}
