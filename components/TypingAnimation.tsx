@@ -31,7 +31,7 @@ const TypingAnimation = ({ children }: Props) => {
 
     return (
         // <div className="px-4 text-wrap font-mono whitespace-pre-wrap overflow-hidden">
-        <div className="px-4 text-wrap font-mono whitespace-pre-wrap overflow-hidden bg-background p-8 lg:p-12 rounded-xl shadow-[0px_0px_15px_-3px_rgba(0,0,0,0.1)] dark:shadow-[0_0_12px_6px_rgba(255,255,255,0.05)]">
+        <div className="px-4 text-wrap font-mono whitespace-pre-wrap overflow-hidden p-8 lg:p-12 rounded-xl">
             <span>{text}</span>
             {!isCompleted && <span className="ml-1 animate-blink-dot scale-150">●</span>}
         </div>
