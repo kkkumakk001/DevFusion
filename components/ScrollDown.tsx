@@ -22,7 +22,7 @@ const ScrollDown = () => {
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
             <button
                 onClick={handleScroll}
-                className="animate-bounce-infinite delay-10000 p-4 rounded-full shadow-lg"
+                className="animate-bounce-infinite p-4 rounded-full shadow-lg"
             >
                 <DoubleArrowDownIcon />
             </button>

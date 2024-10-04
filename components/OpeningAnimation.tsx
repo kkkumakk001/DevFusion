@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import TypingAnimation from "./TypingAnimation";
 
 export default function OpeningAnimation({ children }: { children: React.ReactNode }) {
     const [showOpening, setShowOpening] = useState(true);
@@ -11,7 +12,7 @@ export default function OpeningAnimation({ children }: { children: React.ReactNo
         const timer = setTimeout(() => {
             setShowOpening(false);
             setShowContent(true);
-        }, 3000);
+        }, 4000);
 
         return () => clearTimeout(timer);
     }, []);
@@ -54,10 +55,12 @@ export default function OpeningAnimation({ children }: { children: React.ReactNo
                         <motion.h1
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
+                            exit={{ scale: 0 }}
                             transition={{ delay: 0.2, type: "spring", stiffness: 260, damping: 20 }}
                             className="text-4xl font-bold"
                         >
-                            Welcome to DevFusion!
+                            {/* Welcome to DevFusion! */}
+                            <TypingAnimation>Welcome to DevFusion!</TypingAnimation>
                         </motion.h1>
                     </motion.div>
                 )}
@@ -66,7 +69,7 @@ export default function OpeningAnimation({ children }: { children: React.ReactNo
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ delay: 0.5, duration: 1 }}
                 >
                     {children}
                 </motion.div>

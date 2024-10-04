@@ -103,7 +103,7 @@ const config = {
                 },
                 "bounce-infinite": {
                     "0%, 100%": { transform: "translateY(0)" },
-                    "50%": { transform: "translateY(-16px)" },
+                    "50%": { transform: "translateY(-12px)" },
                 },
             },
             animation: {
