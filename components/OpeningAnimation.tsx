@@ -26,14 +26,6 @@ export default function OpeningAnimation({ children }: { children: React.ReactNo
     }, []);
 
     useEffect(() => {
-        const header = document.querySelector("header");
-        if (header) {
-            header.style.display = showOpening ? "none" : "block";
-        }
-        const footer = document.querySelector("footer");
-        // if (footer) {
-        //     footer.style.display = showOpening ? "none" : "block";
-        // }
         const hero = document.getElementById("#hero");
         if (hero) {
             hero.style.display = showOpening ? "none" : "block";

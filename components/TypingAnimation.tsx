@@ -12,33 +12,34 @@ const TypingAnimation = ({ children }: Props) => {
     const [isFirstVisit, setIsFirstVisit] = useState(true);
     const fullText = typeof children === "string" ? children : "";
 
+    // 初回訪問時だけにするか迷ってる
     useEffect(() => {
-        const hasVisited = localStorage.getItem("hasVisitedTyping");
-        if (hasVisited) {
-            setIsFirstVisit(false);
-            setText(fullText);
-            setIsCompleted(true);
-        } else {
-            let index = 0;
+        // const hasVisited = localStorage.getItem("hasVisitedTyping");
+        // if (hasVisited) {
+        //     setIsFirstVisit(false);
+        //     setText(fullText);
+        //     setIsCompleted(true);
+        // } else {
+        let index = 0;
 
-            const typing = () => {
-                if (index < fullText.length) {
-                    setText(fullText.slice(0, index + 1));
-                    index++;
-                    return window.setTimeout(typing, 80);
-                } else {
-                    setIsCompleted(true);
-                    localStorage.setItem("hasVisitedTyping", "true");
-                    return undefined;
-                }
-            };
+        const typing = () => {
+            if (index < fullText.length) {
+                setText(fullText.slice(0, index + 1));
+                index++;
+                return window.setTimeout(typing, 80);
+            } else {
+                setIsCompleted(true);
+                localStorage.setItem("hasVisitedTyping", "true");
+                return undefined;
+            }
+        };
 
-            const timerId = typing();
+        const timerId = typing();
 
-            return () => {
-                if (timerId) clearTimeout(timerId);
-            };
-        }
+        return () => {
+            if (timerId) clearTimeout(timerId);
+        };
+        // }
     }, [fullText]);
 
     return (
