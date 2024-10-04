@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function RecommendRecipe() {
     return (
-        <section className="bg-background p-8 lg:p-12 rounded-xl border">
+        <section id="recommendRecipe" className="bg-background p-8 lg:p-12 rounded-xl border">
             <div className="flex justify-between mb-8">
                 <h2 className="font-semibold">レシピ集</h2>
                 <span>

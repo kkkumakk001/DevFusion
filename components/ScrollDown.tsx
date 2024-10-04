@@ -4,7 +4,7 @@ import { DoubleArrowDownIcon } from "@radix-ui/react-icons";
 
 const ScrollDown = () => {
     const handleScroll = useCallback(() => {
-        const target = document.getElementById("targetSection");
+        const target = document.getElementById("recentArticle");
         const headerOffset = 88;
 
         if (target) {

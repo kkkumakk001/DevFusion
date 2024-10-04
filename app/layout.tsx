@@ -37,7 +37,7 @@ export default function RootLayout({
                         {children}
                         {componentDetail}
                     </main>
-                    <footer>footer</footer>
+                    <footer className="hidden">footer</footer>
                 </ThemeProvider>
             </body>
         </html>

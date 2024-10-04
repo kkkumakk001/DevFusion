@@ -25,6 +25,18 @@ export default function OpeningAnimation({ children }: { children: React.ReactNo
         if (footer) {
             footer.style.display = showOpening ? "none" : "block";
         }
+        const hero = document.getElementById("#hero");
+        if (hero) {
+            hero.style.display = showOpening ? "none" : "block";
+        }
+        const recommendRecipe = document.getElementById("#recommendRecipe");
+        if (recommendRecipe) {
+            recommendRecipe.style.display = showOpening ? "none" : "block";
+        }
+        const recentArticle = document.getElementById("#recentArticle");
+        if (recentArticle) {
+            recentArticle.style.display = showOpening ? "none" : "block";
+        }
     }, [showOpening]);
 
     return (
