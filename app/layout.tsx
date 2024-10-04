@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageTopScroll from "@/components/PageTopScroll";
+import Footer from "@/components/Footer";
 
 const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400"] });
 
@@ -37,7 +38,7 @@ export default function RootLayout({
                         {children}
                         {componentDetail}
                     </main>
-                    <footer className="hidden">footer</footer>
+                    <Footer />
                 </ThemeProvider>
             </body>
         </html>

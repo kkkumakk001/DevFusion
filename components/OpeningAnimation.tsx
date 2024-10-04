@@ -31,9 +31,9 @@ export default function OpeningAnimation({ children }: { children: React.ReactNo
             header.style.display = showOpening ? "none" : "block";
         }
         const footer = document.querySelector("footer");
-        if (footer) {
-            footer.style.display = showOpening ? "none" : "block";
-        }
+        // if (footer) {
+        //     footer.style.display = showOpening ? "none" : "block";
+        // }
         const hero = document.getElementById("#hero");
         if (hero) {
             hero.style.display = showOpening ? "none" : "block";
@@ -76,7 +76,7 @@ export default function OpeningAnimation({ children }: { children: React.ReactNo
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5, duration: 1 }}
+                    transition={{ delay: 0.5, duration: 2 }}
                 >
                     {children}
                 </motion.div>
