@@ -5,16 +5,24 @@ import { motion, AnimatePresence } from "framer-motion";
 import TypingAnimation from "./TypingAnimation";
 
 export default function OpeningAnimation({ children }: { children: React.ReactNode }) {
-    const [showOpening, setShowOpening] = useState(true);
+    const [showOpening, setShowOpening] = useState(false);
     const [showContent, setShowContent] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowOpening(false);
-            setShowContent(true);
-        }, 4000);
+        const hasVisited = localStorage.getItem("hasVisited");
 
-        return () => clearTimeout(timer);
+        if (!hasVisited) {
+            setShowOpening(true);
+            const timer = setTimeout(() => {
+                setShowOpening(false);
+                setShowContent(true);
+                localStorage.setItem("hasVisited", "true");
+            }, 5000);
+
+            return () => clearTimeout(timer);
+        } else {
+            setShowContent(true);
+        }
     }, []);
 
     useEffect(() => {
@@ -59,7 +67,6 @@ export default function OpeningAnimation({ children }: { children: React.ReactNo
                             transition={{ delay: 0.2, type: "spring", stiffness: 260, damping: 20 }}
                             className="text-4xl font-bold"
                         >
-                            {/* Welcome to DevFusion! */}
                             <TypingAnimation>Welcome to DevFusion!</TypingAnimation>
                         </motion.h1>
                     </motion.div>
