@@ -11,14 +11,23 @@ import { NAV_LINK } from "@/constants";
 const Header = () => {
     useEffect(() => {
         const header = document.getElementById("main-header");
-        const timer = setTimeout(() => {
-            if (header) {
-                header.classList.remove("hidden");
-            }
-        }, 4000);
+        const hasVisited = localStorage.getItem("hasVisited");
+
+        const timer = setTimeout(
+            () => {
+                if (!hasVisited) {
+                    localStorage.setItem("hasVisited", "true");
+                }
+                if (header) {
+                    header.classList.remove("hidden");
+                }
+            },
+            hasVisited ? 0 : 4000
+        );
 
         return () => clearTimeout(timer);
     }, []);
+
     return (
         <header
             id="main-header"
