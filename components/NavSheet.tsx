@@ -5,7 +5,13 @@ import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet";
 import Link from "next/link";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
-import { NAV_LINK } from "@/constants";
+// import { NAV_LINK } from "@/constants";
+const NAV_LINK = [
+    { name: "はじめに戻る", ruby: "Home", href: "", delay: "delay-300" },
+    { name: "記事一覧", ruby: "Article", href: "article", delay: "delay-600" },
+    { name: "コンポーネント", ruby: "Component", href: "component", delay: "delay-900" },
+    { name: "お問い合わせ", ruby: "Contact", href: "contact", delay: "delay-1200" },
+];
 
 export default function NavSheet({ className }: { className?: string }) {
     const [open, setOpen] = useState(false);

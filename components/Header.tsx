@@ -6,7 +6,13 @@ import { ModeToggleButton } from "./ModeToggleButton";
 import NavSheet from "./NavSheet";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { Button } from "./ui/button";
-import { NAV_LINK } from "@/constants";
+// import { NAV_LINK } from "@/constants";
+const NAV_LINK = [
+    { name: "はじめに戻る", ruby: "Home", href: "", delay: "delay-300" },
+    { name: "記事一覧", ruby: "Article", href: "article", delay: "delay-600" },
+    { name: "コンポーネント", ruby: "Component", href: "component", delay: "delay-900" },
+    { name: "お問い合わせ", ruby: "Contact", href: "contact", delay: "delay-1200" },
+];
 
 const Header = () => {
     useEffect(() => {
