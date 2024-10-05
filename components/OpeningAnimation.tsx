@@ -57,7 +57,7 @@ export default function OpeningAnimation({ children }: { children: React.ReactNo
                             animate={{ scale: 1 }}
                             exit={{ scale: 0 }}
                             transition={{ delay: 0.2, type: "spring", stiffness: 260, damping: 20 }}
-                            className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold"
+                            className="text-2xl md:text-3xl xl:text-4xl font-bold"
                         >
                             <TypingAnimation>Welcome to DevFusion!</TypingAnimation>
                         </motion.h1>
