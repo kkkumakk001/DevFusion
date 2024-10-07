@@ -24,8 +24,8 @@ export default function Pagination({ totalCount, current = 1, basePath = "/artic
                                 {p}
                             </Link>
                         ) : (
-                            <Button asChild size="sm">
-                                <span className="flex justify-center items-center w-9 h-9 rounded-sm">
+                            <Button asChild variant="noDesign" size="sm">
+                                <span className="flex justify-center items-center w-9 h-9 rounded-sm bg-primary text-background">
                                     {p}
                                 </span>
                             </Button>
