@@ -1,61 +1,63 @@
-import Image from "next/image";
-import { EnvelopeClosedIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
+import { EnvelopeClosedIcon, GitHubLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
+import { Button } from "@/components/ui/button";
+import PageTitle from "@/components/PageTitle";
+import PageTitleMargin from "@/components/PageTitleMargin";
+import Link from "next/link";
 
-export default function Page() {
+export default function AboutPage() {
     return (
-        <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
-            {/* <h1 className="text-3xl font-bold mb-6">プロフィール</h1> */}
-            <div className="flex flex-col sm:flex-row items-center sm:items-start mb-8">
-                <Image
-                    src="/placeholder.svg?height=150&width=150"
-                    alt="プロフィール写真"
-                    width={150}
-                    height={150}
-                    className="rounded-full mb-4 sm:mb-0 sm:mr-6"
-                />
-                <div>
-                    <h2 className="text-2xl font-semibold mb-2">山田 太郎</h2>
-                    <p className="text-gray-600 mb-4">
-                        ウェブ開発者として5年間の経験があります。新しい技術を学ぶことが大好きで、
-                        特にフロントエンド開発に情熱を注いでいます。
+        <>
+            <PageTitle>お問い合わせ</PageTitle>
+            <PageTitleMargin />
+            <section className="max-w-screen-md mx-auto">
+                <div className="mb-8 p-6 border border-border rounded-md">
+                    <h2 className="font-semibold mb-4 text-primary">連絡先</h2>
+                    <div className="space-y-2 text-muted-foreground">
+                        <div className="flex items-center">
+                            <EnvelopeClosedIcon className="mr-2" />
+                            <Link href="mailto:kk.10.kuma.kk@gmail.com">
+                                kk.10.kuma.kk@gmail.com
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mb-8 p-6 border border-border rounded-md">
+                    <h2 className="font-semibold mb-2 text-primary">K.K</h2>
+                    <p className="text-muted-foreground">
+                        Next.jsとその周辺技術に興味があります。実務未経験ですが、ポートオフォリオとして作成した作品がこのDevFusionです。
                     </p>
                 </div>
-            </div>
 
-            <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-4">連絡先</h3>
-                <ul className="space-y-2">
-                    <li className="flex items-center">
-                        <EnvelopeClosedIcon className="w-5 h-5 mr-2" />
-                        <a href="mailto:taro@example.com" className="hover:underline">
-                            taro@example.com
-                        </a>
-                    </li>
-                    <li className="flex items-center">
-                        <TwitterLogoIcon className="w-5 h-5 mr-2" />
-                        <a
-                            href="https://www.example.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:underline"
+                <div className="mb-8 p-6 border border-border rounded-md">
+                    <h2 className="font-semibold mb-2 text-primary">SNS</h2>
+                    <div className="flex justify-center space-x-4">
+                        <Button
+                            asChild
+                            variant="outline"
+                            size="icon"
+                            className="bg-secondary text-secondary-foreground hover:bg-secondary/80"
                         >
-                            www.example.com
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div>
-                <h3 className="text-xl font-semibold mb-4">スキルと興味</h3>
-                <ul className="list-disc list-inside space-y-1 text-gray-600">
-                    <li>JavaScript / TypeScript</li>
-                    <li>React / Next.js</li>
-                    <li>HTML / CSS / Tailwind CSS</li>
-                    <li>ユーザーインターフェースデザイン</li>
-                    <li>アクセシビリティ</li>
-                    <li>パフォーマンス最適化</li>
-                </ul>
-            </div>
-        </div>
+                            <Link
+                                href="https://github.com/kkkumakk001?tab=repositories"
+                                target="_blank"
+                            >
+                                <GitHubLogoIcon className="h-4 w-4" />
+                            </Link>
+                        </Button>
+                        <Button
+                            asChild
+                            variant="outline"
+                            size="icon"
+                            className="bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                        >
+                            <Link href="">
+                                <TwitterLogoIcon className="h-4 w-4" />
+                            </Link>
+                        </Button>
+                    </div>
+                </div>
+            </section>
+        </>
     );
 }
