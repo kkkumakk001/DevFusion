@@ -9,9 +9,14 @@ const Page = () => {
                 <p className="pb-2 mb-4 border-b border-primary/30 max-w-fit">タグ一覧</p>
                 <ul className="flex flex-wrap gap-2">
                     {tags.map((tag) => (
-                        <li key={tag.name} className="border duration-500">
+                        <li key={tag.name}>
                             <Button asChild size="tag">
-                                <Link href={`/article/category/${tag.id}`}>{tag.name}</Link>
+                                <Link
+                                    href={`/article/category/${tag.id}`}
+                                    className="border duration-500"
+                                >
+                                    {tag.name}
+                                </Link>
                             </Button>
                         </li>
                     ))}

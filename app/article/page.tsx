@@ -12,7 +12,6 @@ export default async function Articles() {
     });
     return (
         <section>
-            <p className="pb-2 mb-4 border-b border-primary/30 max-w-fit">記事一覧</p>
             <SearchField />
             <Suspense fallback={<ArticleListLoading />}>
                 <ArticleList article={article} />
