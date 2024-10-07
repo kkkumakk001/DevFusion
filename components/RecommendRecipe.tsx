@@ -1,4 +1,5 @@
 import { componentRecipe } from "@/datas/componentRecipe";
+import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
 export default function RecommendRecipe() {
@@ -19,8 +20,12 @@ export default function RecommendRecipe() {
                 {componentRecipe.map((component, index) => (
                     <div key={index}>
                         <p className="mb-2">
-                            <Link href={`/component/${component.linkName}`} className="font-light">
-                                {component.title}
+                            <Link
+                                href={`/component/${component.linkName}`}
+                                className="flex items-center"
+                            >
+                                <span className="font-light mr-1">{component.title}</span>
+                                <ExternalLinkIcon className="w-4 h-4" />
                             </Link>
                         </p>
                         <div className="relative overflow-hidden h-[200px] md:h-[300px] border border-border rounded-xl flex justify-center items-center">

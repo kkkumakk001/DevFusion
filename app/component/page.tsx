@@ -1,19 +1,24 @@
+import PageTitle from "@/components/PageTitle";
+import PageTitleMargin from "@/components/PageTitleMargin";
 import { componentRecipe } from "@/datas/componentRecipe";
+import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
 export default function Page() {
     return (
         <main>
-            <h2 className="text-2xl font-semibold mb-12">コンポーネント集</h2>
+            <PageTitle>コンポーネント集</PageTitle>
+            <PageTitleMargin />
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
                 {componentRecipe.map((component, index) => (
                     <div key={index}>
                         <p className="mb-2">
                             <Link
                                 href={`/component/${component.linkName}`}
-                                className="font-semibold"
+                                className="flex items-center"
                             >
-                                {component.title}
+                                <span className="font-light mr-1">{component.title}</span>
+                                <ExternalLinkIcon className="w-4 h-4" />
                             </Link>
                         </p>
                         <div className="relative overflow-hidden h-[200px] md:h-[300px] border border-border rounded-xl flex justify-center items-center">
