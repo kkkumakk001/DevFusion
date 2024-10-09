@@ -4,16 +4,18 @@ import { useEffect, useState } from "react";
 
 type Props = {
     children: React.ReactNode;
+    storageKey: string;
 };
 
-const TypingAnimation = ({ children }: Props) => {
+const TypingAnimation = ({ children, storageKey }: Props) => {
     const [text, setText] = useState("");
     const [isCompleted, setIsCompleted] = useState(false);
     const [isFirstVisit, setIsFirstVisit] = useState(true);
     const fullText = typeof children === "string" ? children : "";
 
     useEffect(() => {
-        const hasVisited = localStorage.getItem("hasVisitedTyping");
+        const hasVisited = localStorage.getItem(storageKey);
+
         if (hasVisited) {
             setIsFirstVisit(false);
             setText(fullText);
@@ -28,7 +30,7 @@ const TypingAnimation = ({ children }: Props) => {
                     return window.setTimeout(typing, 80);
                 } else {
                     setIsCompleted(true);
-                    localStorage.setItem("hasVisitedTyping", "true");
+                    localStorage.setItem(storageKey, "true");
                     return undefined;
                 }
             };
@@ -39,7 +41,7 @@ const TypingAnimation = ({ children }: Props) => {
                 if (timerId) clearTimeout(timerId);
             };
         }
-    }, [fullText]);
+    }, [fullText, storageKey]);
 
     return (
         <div className="px-4 text-primary text-wrap font-mono whitespace-pre-wrap overflow-hidden p-8 lg:p-12 rounded-xl">
