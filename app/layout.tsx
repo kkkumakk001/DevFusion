@@ -27,7 +27,7 @@ export default function RootLayout({
             <body className={`notoSansJP.className -z-10`}>
                 <ThemeProvider
                     attribute="class"
-                    defaultTheme="dark"
+                    defaultTheme="light"
                     enableSystem
                     disableTransitionOnChange
                 >
