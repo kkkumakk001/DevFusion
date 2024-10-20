@@ -127,7 +127,7 @@ export default function Header() {
                                 <DropdownMenuLabel>マイアカウント</DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem>
-                                    <Link href="dashboard">ブックマーク一覧</Link>
+                                    <Link href="/dashboard">ブックマーク一覧</Link>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem onClick={handleSignOut}>
                                     ログアウト
