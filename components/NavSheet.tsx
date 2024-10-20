@@ -1,7 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet";
+import {
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetTitle,
+    SheetTrigger,
+} from "../components/ui/sheet";
 import Link from "next/link";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
@@ -25,6 +31,8 @@ export default function NavSheet({ className }: { className?: string }) {
                     side={"top"}
                     className="flex h-screen flex-col flex-wrap items-center justify-center gap-6"
                 >
+                    <SheetTitle className="hidden">ナビゲーション</SheetTitle>
+                    <SheetDescription className="hidden">ナビゲーション</SheetDescription>
                     {NAV_LINK.map((nav) => {
                         return (
                             <Link
