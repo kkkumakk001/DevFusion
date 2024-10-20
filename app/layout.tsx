@@ -1,13 +1,14 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Noto_Sans_JP } from "next/font/google";
+// import { Noto_Sans_JP } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageTopScroll from "@/components/PageTopScroll";
 import Footer from "@/components/Footer";
+import { AuthProvider } from "./context/AuthContext";
 
-const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400"] });
+// const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -24,21 +25,24 @@ export default function RootLayout({
     return (
         <html lang="ja" suppressHydrationWarning={true}>
             <PageTopScroll />
-            <body className={`notoSansJP.className -z-10`}>
+            {/* <body className={`notoSansJP.className -z-10`}> */}
+            <body className={`-z-10`}>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="dark"
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <Header />
-                    <Breadcrumbs />
-                    <span className="block mb-2"></span>
-                    <main className="w-[95%] mx-auto">
-                        {children}
-                        {componentDetail}
-                    </main>
-                    <Footer />
+                    <AuthProvider>
+                        <Header />
+                        <Breadcrumbs />
+                        <span className="block mb-2"></span>
+                        <main className="w-[95%] mx-auto">
+                            {children}
+                            {componentDetail}
+                        </main>
+                        <Footer />
+                    </AuthProvider>
                 </ThemeProvider>
             </body>
         </html>
