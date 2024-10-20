@@ -2,6 +2,7 @@ import { Article } from "@/lib/microcms";
 import Link from "next/link";
 import Date from "./Date";
 import { Button } from "./ui/button";
+import BookmarkButton from "./BookmarkButton";
 
 type Props = {
     article: Article[];
@@ -19,11 +20,11 @@ export default function ArticleList({ article }: Props) {
                     className="w-full border-b border-dashed border-primary/30 p-6"
                 >
                     <dl>
-                        <dt className="text-lg mb-2 hover:underline">
+                        <dt className="text-lg mb-2 hover:underline flex justify-between items-center">
                             <Link href={`/article/${article.id}`}>{article.title}</Link>
+                            <BookmarkButton articleId={article.id} />
                         </dt>
                         <dd className="md:flex">
-                            {/* <dd> */}
                             <Date date={article.publishedAt ?? article.createdAt} />
                             <div className="mt-2 md:mt-0 md:ml-2">
                                 {article.category.map((category) => (

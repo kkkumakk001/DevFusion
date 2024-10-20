@@ -5,6 +5,7 @@ import Date from "./Date";
 import { Button } from "./ui/button";
 import ButtonLink from "./ButtonLink";
 import styles from "./ArticleDetail.module.scss";
+import BookmarkButton from "./BookmarkButton";
 
 type Props = {
     data: Article;
@@ -15,7 +16,10 @@ export default async function ArticleDetail({ data }: Props) {
         <article>
             <h3 className="text-2xl">{data.title}</h3>
             <div className="grid gap-2 mb-8">
-                <Date date={data.publishedAt ?? data.createdAt} />
+                <div className="flex gap-2">
+                    <Date date={data.publishedAt ?? data.createdAt} />
+                    <BookmarkButton articleId={data.id} />
+                </div>
                 <div className="">
                     {data.category.map((category) => (
                         <Button asChild size="tag" key={category.name}>
