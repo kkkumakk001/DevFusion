@@ -7,6 +7,10 @@ import { getArticleDetail, Article } from "@/lib/microcms";
 import { useAuth } from "../context/AuthContext";
 import BookmarkButton from "@/components/BookmarkButton";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import Date from "@/components/Date";
+import PageTitle from "@/components/PageTitle";
+import PageTitleMargin from "@/components/PageTitleMargin";
 
 interface BookmarkedArticle extends Article {
     bookmarkId: string;
@@ -21,6 +25,8 @@ export default function Dashboard() {
     useEffect(() => {
         const fetchBookmarkedArticles = async () => {
             if (!user) {
+                // ダッシュボード画面でログアウトしてもブックマーク記事が消えなかったけど、↓で解決
+                setBookmarkedArticles([]);
                 setLoading(false);
                 return;
             }
@@ -29,11 +35,9 @@ export default function Dashboard() {
                 setLoading(true);
                 setError(null);
 
-                // ユーザーのブックマークを取得
                 const bookmarksRef = collection(db, `users/${user.uid}/bookmarks`);
                 const bookmarksSnapshot = await getDocs(bookmarksRef);
 
-                // 各ブックマークに対して記事の詳細を取得
                 const articlePromises = bookmarksSnapshot.docs.map(async (doc) => {
                     const bookmarkData = doc.data();
                     const articleId = bookmarkData.articleId;
@@ -50,7 +54,6 @@ export default function Dashboard() {
                     }
                 });
 
-                // 全ての記事データを取得し、エラーがあったものを除外
                 const articles = (await Promise.all(articlePromises)).filter(
                     (article): article is BookmarkedArticle => article !== null
                 );
@@ -79,21 +82,42 @@ export default function Dashboard() {
     }
 
     return (
-        <div>
-            <h2>ブックマークした記事</h2>
-            <ul>
-                {bookmarkedArticles.map((article) => (
-                    <li key={article.bookmarkId} className="flex items-center">
-                        <Link href={`/article/${article.id}`}>
-                            <h3 className="inline">{article.title}</h3>
-                        </Link>
-                        <BookmarkButton articleId={article.id} />
-                    </li>
-                ))}
-            </ul>
-            {/* {bookmarkedArticles} */}
-        </div>
+        <>
+            <PageTitle>ブックマークした記事</PageTitle>
+            <PageTitleMargin />
+            <section className="bg-background p-8 lg:p-12 rounded-xl border">
+                <ul>
+                    {bookmarkedArticles.map((article) => (
+                        <li
+                            key={article.id}
+                            className="w-full border-b border-dashed border-primary/30 p-6"
+                        >
+                            <dl>
+                                <dt className="text-lg mb-2 hover:underline flex justify-between items-center">
+                                    <Link href={`/article/${article.id}`}>{article.title}</Link>
+                                    <BookmarkButton articleId={article.id} />
+                                </dt>
+                                <dd className="md:flex">
+                                    <Date date={article.publishedAt ?? article.createdAt} />
+                                    <div className="mt-2 md:mt-0 md:ml-2">
+                                        {article.category.map((category) => (
+                                            <Button key={category.name} asChild size="tag">
+                                                <Link
+                                                    key={category.name}
+                                                    href={`/article/category/${category.id}`}
+                                                    className="[&:not(:last-child)]:mr-2 duration-500"
+                                                >
+                                                    {category.name}
+                                                </Link>
+                                            </Button>
+                                        ))}
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        </>
     );
-
-    // return { bookmarkedArticles, loading, error };
 }
