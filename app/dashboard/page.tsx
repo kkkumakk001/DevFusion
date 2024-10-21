@@ -86,19 +86,34 @@ export default function Dashboard() {
             <PageTitle>ブックマークした記事</PageTitle>
             <PageTitleMargin />
             <section className="bg-background p-8 lg:p-12 rounded-xl border">
+                <div className="flex justify-end">
+                    <Link
+                        href="/article"
+                        className="text-sm text-muted-foreground hover:text-accent-foreground hover:bg-accent/80 px-4 py-2 rounded-md transition duration-500"
+                    >
+                        記事一覧へ
+                    </Link>
+                </div>
                 <ul>
                     {bookmarkedArticles.map((article) => (
                         <li
                             key={article.id}
                             className="w-full border-b border-dashed border-primary/30 p-6"
                         >
-                            <dl>
-                                <dt className="text-lg mb-2 hover:underline flex justify-between items-center">
-                                    <Link href={`/article/${article.id}`}>{article.title}</Link>
-                                    <BookmarkButton articleId={article.id} />
-                                </dt>
-                                <dd className="md:flex">
-                                    <Date date={article.publishedAt ?? article.createdAt} />
+                            <div>
+                                <div className="text-lg mb-2 hover:underline flex justify-between items-center">
+                                    <Link
+                                        href={`/article/${article.id}`}
+                                        className="hover:underline"
+                                    >
+                                        {article.title}
+                                    </Link>
+                                </div>
+                                <div className="md:flex md:items-center">
+                                    <div className="flex gap-2">
+                                        <Date date={article.publishedAt ?? article.createdAt} />
+                                        <BookmarkButton articleId={article.id} />
+                                    </div>
                                     <div className="mt-2 md:mt-0 md:ml-2">
                                         {article.category.map((category) => (
                                             <Button key={category.name} asChild size="tag">
@@ -112,8 +127,8 @@ export default function Dashboard() {
                                             </Button>
                                         ))}
                                     </div>
-                                </dd>
-                            </dl>
+                                </div>
+                            </div>
                         </li>
                     ))}
                 </ul>
