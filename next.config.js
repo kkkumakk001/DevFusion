@@ -12,6 +12,10 @@ const nextConfig = {
             },
         ],
     },
+    eslint: {
+        // 本番環境でもツールバーを完全に無効化
+        ignoreDuringBuilds: true,
+    },
 };
 
 module.exports = nextConfig;
