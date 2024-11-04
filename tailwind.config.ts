@@ -25,7 +25,7 @@ const config = {
                 "10000": "10000ms",
             },
             height: {
-                "screen-minus-header": "calc(100dvh - 88px)",
+                "screen-minus-header": "calc(100svh - 88px)",
             },
             colors: {
                 border: "hsl(var(--border))",

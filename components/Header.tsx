@@ -20,7 +20,6 @@ import { useAuth } from "@/app/context/AuthContext";
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 
-// import { NAV_LINK } from "@/constants";
 const NAV_LINK = [
     { name: "はじめに戻る", ruby: "Home", href: "", delay: "delay-300" },
     { name: "記事一覧", ruby: "Article", href: "article", delay: "delay-600" },
@@ -70,7 +69,7 @@ export default function Header() {
     return (
         <header
             id="main-header"
-            className="hidden sticky top-0 z-50 py-4 text-primary dark:text-muted-foreground bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 "
+            className="hidden sticky top-0 z-50 py-4 text-primary dark:text-muted-foreground backdrop-blur supports-[backdrop-filter]:bg-background/60 "
         >
             <div className="mx-auto flex w-[95%] items-center justify-between">
                 <h1>
