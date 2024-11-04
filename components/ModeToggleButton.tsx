@@ -9,13 +9,7 @@ export function ModeToggleButton() {
     const { theme, setTheme } = useTheme();
 
     const ModeToggle = () => {
-        // setTheme((prev) => (prev === "light" ? "dark" : "light"));
-        // 三項演算子だと動かないけどif文ならいけた
-        if (theme === "light") {
-            setTheme("dark");
-        } else {
-            setTheme("light");
-        }
+        setTheme(theme === "light" ? "dark" : "light");
     };
 
     return (
