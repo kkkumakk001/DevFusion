@@ -46,19 +46,35 @@ export const getArticleList = async (queries?: MicroCMSQueries) => {
 };
 
 export const getArticleDetail = async (contentId: string, queries?: MicroCMSQueries) => {
+    const customRequestInit: { next?: { revalidate?: number } } = {};
+
+    if (queries?.draftKey !== undefined) {
+        customRequestInit.next = { revalidate: 0 };
+    }
+
     const detailData = await client.getListDetail<Article>({
         endpoint: "article",
         contentId,
         queries,
-        customRequestInit: {
-            next: {
-                revalidate: queries?.draftKey === undefined ? 60 : 0,
-            },
-        },
+        customRequestInit,
     });
 
     return detailData;
 };
+// export const getArticleDetail = async (contentId: string, queries?: MicroCMSQueries) => {
+//     const detailData = await client.getListDetail<Article>({
+//         endpoint: "article",
+//         contentId,
+//         queries,
+//         customRequestInit: {
+//             next: {
+//                 revalidate: queries?.draftKey === undefined ? 60 : 0,
+//             },
+//         },
+//     });
+
+//     return detailData;
+// };
 
 export const getCategoryDetail = async (contentId: string, queries?: MicroCMSQueries) => {
     const detailData = await client.getListDetail<CategoryName>({
